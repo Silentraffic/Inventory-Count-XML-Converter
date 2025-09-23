@@ -49,9 +49,14 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .section h2 {
-      color: #000000; /* Changed from blue to black */
+      color: #000000;
       margin-top: 0;
       font-weight: 600;
+    }
+    .section p {
+      margin: -5px 0 15px 0;
+      color: #555;
+      font-size: 0.95rem;
     }
 
     /* Inputs, textarea, buttons */
@@ -73,19 +78,18 @@
       height: 200px;
 	}
 	
-button {
-  background-color: #666666;   /* medium gray */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: 600;
-}
-button:hover {
-  background-color: #444444;   /* darker gray on hover */
-}
-
+    button {
+      background-color: #666666;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #444444;
+    }
 
     /* Preview table */
     table {
@@ -109,7 +113,6 @@ button:hover {
 <body>
 
   <header class="site-header">
-    <!-- Update src if your logo filename is different -->
     <img src="element-logo.png" alt="Element Logic Logo" class="logo">
     <h1>Inventory Count Import - XML Converter</h1>
   </header>
@@ -118,8 +121,10 @@ button:hover {
 
     <div class="section">
       <h2>1. Upload Excel</h2>
+      <p>Upload Excel template with SKU numbers to create an Inventory Count List.</p>
       <input type="file" id="fileInput" accept=".xlsx,.xls">
       <button onclick="processFile()">Convert Excel → XML</button>
+      <button onclick="downloadTemplate()">Download Template</button>
     </div>
 
     <div class="section">
@@ -254,6 +259,10 @@ button:hover {
       a.download = "request.xml";
       a.click();
       URL.revokeObjectURL(a.href);
+    }
+
+    function downloadTemplate() {
+      window.location.href = "template.xlsx"; // Make sure this file exists in your repo
     }
   </script>
 
