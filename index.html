@@ -19,7 +19,7 @@
       display: flex;
       align-items: center;
       padding: 15px 40px;
-      background-color: #c8102e; /* Element Logic Red */
+      background-color: #c8102e;
     }
     .site-header img.logo {
       height: 40px;
@@ -76,7 +76,7 @@
     textarea {
       resize: vertical;
       height: 200px;
-	}
+    }
 	
     button {
       background-color: #666666;
@@ -139,6 +139,7 @@
 
     <div class="section">
       <h2>3. Request Body (XML)</h2>
+      <p>Copy this XML content into your preferred API client or automation tool (e.g., Postman, Insomnia, cURL) to send it to your endpoint.</p>
       <textarea id="requestBody" placeholder="Converted XML will appear here"></textarea>
       <button onclick="downloadRequest()">Download Request Body</button>
     </div>
@@ -262,10 +263,9 @@
     }
 
     function downloadTemplate() {
-      window.location.href = "InventoryCountXMLConvert_Template.xlsx"; // Make sure this file exists in your repo
+      window.location.href = "InventoryCountXMLConvert_Template.xlsx";
     }
   </script>
 
 </body>
 </html>
-
